@@ -33,13 +33,26 @@ func Calc(op Operation, x, y float64) (float64, error) {
 		return (x - y), nil
 	case 2:
 		if y == 0 {
-			return 0, errors.New("You can't divide by zero")
+			return 0, errors.New("you can't divide by zero")
 		}
 		return (x / y), nil
 	case 3:
 		return x * y, nil
 	default:
-		return 0, errors.New("You selected a wrong option")
+		return 0, errors.New("you selected a wrong option")
 	}
+}
 
+func Split(a, b int) (x, y int) {
+	x = a / b
+	y = a % b
+	return
+}
+
+func MSum(numbers ...int) int {
+	sum := 0
+	for _, number := range numbers {
+		sum += number
+	}
+	return sum
 }
